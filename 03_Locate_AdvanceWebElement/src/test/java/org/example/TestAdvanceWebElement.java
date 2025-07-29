@@ -29,10 +29,13 @@ public class TestAdvanceWebElement extends DriverSetup{
         System.out.println(browser.findElement(By.xpath("//a[@class='button bar-item' and @href='/']")).getText());
         System.out.println(browser.findElement(By.cssSelector("a[class='button bar-item'][href='/']")).getText());
 
-
         // using SubString
         System.out.println(browser.findElement(By.xpath("//button[starts-with(@onclick,\" window.open('http://google.com',\")]")).getText());
         System.out.println(browser.findElement(By.cssSelector("button[onclick^=\" window.open('http://google.com',\"]")).getText());
+
+        // Content Method (match any part in the content)
+        System.out.println(browser.findElement(By.xpath("//button[contains(@onclick,\"open('http://google.com',\")]")).getText());
+        System.out.println(browser.findElement(By.cssSelector("button[onclick*=\"open('http://google.com',\"]")).getText());
 
 
 
