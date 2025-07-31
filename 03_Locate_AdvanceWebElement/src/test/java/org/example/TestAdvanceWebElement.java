@@ -62,7 +62,19 @@ public class TestAdvanceWebElement extends DriverSetup{
 
         System.out.println(browser.findElement(By.cssSelector("tr > th:first-child")).getText());
         System.out.println(browser.findElement(By.cssSelector("tr > th:nth-child(3)")).getText());
-        System.out.println(browser.findElement(By.cssSelector("tr > th:first-child")).getText());
+        System.out.println(browser.findElement(By.cssSelector("tr > th:last-child")).getText());
+
+        // siblings locate
+        System.out.println(browser.findElement(By.xpath("//td[text()='Personal Shopper']")).getText());
+        System.out.println(browser.findElement(By.xpath("//td[contains(text(),'rsonal Sh')]")).getText());
+
+        // content method + previous or next sibling locate
+        System.out.println(browser.findElement(By.xpath("//td[contains(text(),'Bong')] /preceding-sibling::td")).getText());
+        System.out.println(browser.findElement(By.xpath("//td[contains(text(),'Bong')] /following-sibling::td[2]")).getText());
+        System.out.println(browser.findElement(By.xpath("//td[contains(text(),'Bong')] /following-sibling::td[last()]")).getText());
+
+
+
 
 
 
